@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Purva ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top, #ff9a9e, #fad0c4);
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255,255,255,0.95);
+    padding: 45px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    z-index: 2;
+}
+
+h1 {
+    color: #ff3f6c;
+    font-size: 28px;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease;
+}
+
+.buttons {
+    position: relative;
+    height: 120px;
+}
+
+button {
+    padding: 14px 32px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+#yesBtn {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+}
+
+#noBtn {
+    background: #ddd;
+    position: absolute;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.popup-content {
+    background: white;
+    padding: 50px;
+    border-radius: 30px;
+    text-align: center;
+    animation: zoom 0.6s ease;
+}
+
+.popup-content h2 {
+    color: #ff3f6c;
+    font-size: 30px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes zoom {
+    from { transform: scale(0.4);}
+    to { transform: scale(1);}
+}
+
+/* Floating Hearts */
+.heart {
+    position: absolute;
+    color: rgba(255,0,80,0.6);
+    font-size: 20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh); opacity: 1;}
+    100% { transform: translateY(-10vh); opacity: 0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+</audio>
+
+<div class="container">
+    <h1>
+        Hi Purva ❤️<br><br>
+        From smiles to fights,<br>
+        from chaos to comfort…<br><br>
+        Will you be my Valentine? 💖
+    </h1>
+
+    <div class="buttons">
+        <button id="yesBtn">Yes 💍</button>
+        <button id="noBtn">No 🙈</button>
+    </div>
+</div>
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h2>She Said YES 🥹❤️</h2>
+        <p>
+            Thank you for choosing me.<br>
+            This Valentine’s Day is officially ours 💕
+        </p>
+    </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const popup = document.getElementById("popup");
+
+// No button逃跑
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * 250;
+    const y = Math.random() * 120;
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+});
+
+// Yes button popup
+yesBtn.addEventListener("click", () => {
+    popup.style.display = "flex";
+});
+
+// Floating hearts
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 25 + 15 + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}, 400);
+</script>
+
+</body>
+</html>
