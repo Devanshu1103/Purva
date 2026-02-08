@@ -175,19 +175,7 @@ noBtn.addEventListener("mouseover", moveNoButton);
 noBtn.addEventListener("touchstart", moveNoButton);
 
 // Yes button popup
-yesBtn.addEventListener("click", () => {
-    popup.style.display = "flex";
-
-    const phoneNumber = "918237898386"; // <-- put your number here
-    const message = "Yes, I’ll be your Valentine ❤️";
-
-    const whatsappURL =
-        "https://wa.me/" +
-        phoneNumber +
-        "?text=" +
-        encodeURIComponent(message);
-
-yesBtn.addEventListener("click", () => {
+yesLink.addEventListener("click", function () {
     const phoneNumber = "918237898386"; // your number
     const message = "Yes, I’ll be your Valentine ❤️";
 
@@ -200,8 +188,26 @@ yesBtn.addEventListener("click", () => {
     // show popup
     popup.style.display = "flex";
 
-    // redirect immediately (mobile-safe)
-    window.location.href = whatsappURL;
+    // IMPORTANT: set href dynamically (Safari-safe)
+    yesLink.href = whatsappURL;
+});
+
+yesLink.addEventListener("click", function () {
+    const phoneNumber = "918237898386"; // your number
+    const message = "Yes, I’ll be your Valentine ❤️";
+
+    const whatsappURL =
+        "https://wa.me/" +
+        phoneNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+    // show popup
+    popup.style.display = "flex";
+
+    // IMPORTANT: set href dynamically (Safari-safe)
+    yesLink.href = whatsappURL;
+});
 });
 });
 
