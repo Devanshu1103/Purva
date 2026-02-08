@@ -150,6 +150,19 @@ noBtn.addEventListener("mouseover", () => {
 // Yes button popup
 yesBtn.addEventListener("click", () => {
     popup.style.display = "flex";
+
+    const phoneNumber = "918237898386"; // <-- put your number here
+    const message = "Yes, I’ll be your Valentine ❤️";
+
+    const whatsappURL =
+        "https://wa.me/" +
+        phoneNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+    setTimeout(() => {
+        window.open(whatsappURL, "_blank");
+    }, 1200);
 });
 
 // Floating hearts
