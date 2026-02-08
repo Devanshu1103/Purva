@@ -185,9 +185,22 @@ yesBtn.addEventListener("click", () => {
         "?text=" +
         encodeURIComponent(message);
 
-    setTimeout(() => {
-        window.open(whatsappURL, "_blank");
-    }, 1200);
+yesBtn.addEventListener("click", () => {
+    const phoneNumber = "918237898386"; // your number
+    const message = "Yes, I’ll be your Valentine ❤️";
+
+    const whatsappURL =
+        "https://wa.me/" +
+        phoneNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+    // show popup
+    popup.style.display = "flex";
+
+    // redirect immediately (mobile-safe)
+    window.location.href = whatsappURL;
+});
 });
 
 // Floating hearts
