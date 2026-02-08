@@ -141,9 +141,7 @@ button {
     </h1>
 
     <div class="buttons">
-       <a id="yesBtn" href="#" style="text-decoration:none;">
-    <button>Yes 💍</button>
-</a>
+       <button id="yesBtn">Yes 💍</button>
         <button id="noBtn">No 🙈</button>
     </div>
 </div>
@@ -175,7 +173,7 @@ noBtn.addEventListener("mouseover", moveNoButton);
 noBtn.addEventListener("touchstart", moveNoButton);
 
 // Yes button popup
-yesLink.addEventListener("click", function () {
+yesBtn.addEventListener("click", () => {
     const phoneNumber = "918237898386"; // your number
     const message = "Yes, I’ll be your Valentine ❤️";
 
@@ -188,11 +186,11 @@ yesLink.addEventListener("click", function () {
     // show popup
     popup.style.display = "flex";
 
-    // IMPORTANT: set href dynamically (Safari-safe)
-    yesLink.href = whatsappURL;
+    // redirect immediately
+    window.location.href = whatsappURL;
 });
 
-yesLink.addEventListener("click", function () {
+yesBtn.addEventListener("click", () => {
     const phoneNumber = "918237898386"; // your number
     const message = "Yes, I’ll be your Valentine ❤️";
 
@@ -205,10 +203,8 @@ yesLink.addEventListener("click", function () {
     // show popup
     popup.style.display = "flex";
 
-    // IMPORTANT: set href dynamically (Safari-safe)
-    yesLink.href = whatsappURL;
-});
-});
+    // redirect immediately
+    window.location.href = whatsappURL;
 });
 
 // Floating hearts
