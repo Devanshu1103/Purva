@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Purva ❤️</title>
 
 <style>
@@ -77,6 +78,27 @@ button {
     color: #ff3f6c;
     font-size: 30px;
 }
+    @media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+        line-height: 1.4;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+
+    .popup-content {
+        width: 85%;
+        padding: 30px 20px;
+    }
+}
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px);}
@@ -140,12 +162,15 @@ const yesBtn = document.getElementById("yesBtn");
 const popup = document.getElementById("popup");
 
 // No button逃跑
-noBtn.addEventListener("mouseover", () => {
-    const x = Math.random() * 250;
-    const y = Math.random() * 120;
+const moveNoButton = () => {
+    const x = Math.random() * 200;
+    const y = Math.random() * 100;
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
-});
+};
+
+noBtn.addEventListener("mouseover", moveNoButton);
+noBtn.addEventListener("touchstart", moveNoButton);
 
 // Yes button popup
 yesBtn.addEventListener("click", () => {
